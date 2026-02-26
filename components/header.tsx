@@ -83,7 +83,7 @@ export function Header() {
           </Link>
         ))}
         <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
-          <Button size="lg">Get Started</Button>
+          <Button >Get Started</Button>
         </Link>
 
         <button
