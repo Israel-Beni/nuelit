@@ -13,7 +13,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="container-header fixed top-2.5 md:top-5 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center pointer-events-none">
+    <header className="container-header fixed top-[var(--vertical-offset-header)] left-1/2 -translate-x-1/2 z-50 w-full flex justify-center pointer-events-none">
       <div
         className={`
           glass rounded-full p-4 min-w-fit  transition-slow 
