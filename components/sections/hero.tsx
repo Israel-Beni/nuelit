@@ -35,7 +35,7 @@ export function Hero() {
             Hiring Managers
           </h1>
 
-          <p className="text-sm md:text-lg uppercase text-white/70 mt-8">
+          <p className="text-subtitle mt-8">
             Become the candidate all recruiters want to hire
           </p>
 
