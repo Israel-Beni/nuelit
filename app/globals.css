@@ -162,6 +162,28 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .mask-marquee {
+    mask-image: linear-gradient(to right,
+        transparent,
+        black 15%,
+        black 85%,
+        transparent);
+  }
+
   .font-serif {
     font-family: 'Times New Roman', Times, serif;
   }
@@ -171,11 +193,30 @@
   }
 }
 
-
 /* Typography */
 .text-link {
   color: var(--color-link);
   font-weight: 600;
   font-size: 1.125rem;
   line-height: 150%;
+}
+
+.text-heading-1 {
+  @apply text-4xl md:text-5xl lg:text-6xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+}
+
+.text-heading-2 {
+  @apply text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+}
+
+.text-heading-3 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+}
+
+.text-subtitle {
+  @apply text-sm md:text-lg uppercase text-white/70;
+}
+
+.text-body {
+  @apply text-base md:text-lg text-white/50;
 }
