@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/Footer";
+import { Header } from "@/components/common/header";
+import { Footer } from "@/components/common/footer";
 import { geistSans, geistMono, arialRounded, playfairDisplay } from "./fonts";
 
 export const metadata: Metadata = {

@@ -1,10 +1,10 @@
-import { Button } from '@/components/button';
+import { Button } from '@/components/ui/button';
 import Video from 'next-video';
-import { Tag } from '../Tag';
+import { Tag } from '../ui/tag';
 
 export function Hero() {
   return (
-    <section className="relative py-25 flex items-center overflow-hidden">
+    <section id="hero-section-home" className="relative py-25 flex items-center overflow-hidden">
       <div className="container-section h-fit relative flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
         {/* Media  */}
         <div className="absolute top-0 left-0 w-full h-full">
@@ -29,7 +29,7 @@ export function Hero() {
         <div className="relative text-center lg:text-left flex flex-col justify-center gap-5 md:max-w-[48%] h-screen max-h-[calc(70vh-(var(--height-header)+var(--vertical-offset-header)))]">
           <Tag text="Welcome to Nuelit" className='bg-background/70' />
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60 mt-5">
+          <h1 className="text-heading-1 mt-5">
             Making you <br />
             <span className="emphasis">irresistible</span> to <br />
             Hiring Managers

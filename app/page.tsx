@@ -1,19 +1,19 @@
-import { ClientsSection } from "@/components/sections/ClientsSection";
+import { LogoBand } from "@/components/sections/logo-band";
 import { ResumeSection } from "@/components/sections/ResumeSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
+import { Services } from "@/components/sections/services";
 import { UnlockSection } from "@/components/sections/UnlockSection";
-import { FAQSection } from "@/components/sections/FAQSection";
+import { FAQ } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ClientsSection />
-      <ResumeSection />
-      <ServicesSection />
-      <UnlockSection />
-      <FAQSection />
+      <LogoBand />
+      {/* <ResumeSection /> */}
+      <Services />
+      {/* <UnlockSection /> */}
+      <FAQ />
     </>
   );
 }
