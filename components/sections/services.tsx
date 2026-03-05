@@ -5,7 +5,7 @@ import { MyCldImage } from "../utils/my-cld-image";
 
 export function Services() {
   return (
-    <section id="services-section" className="py-25">
+    <section id="services" className="py-25">
       <div className="container-section py-25 bg-white/5">
         <div className="text-center mb-20 flex flex-col items-center gap-5">
           <Tag text="Our" />
