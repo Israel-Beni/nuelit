@@ -11,7 +11,7 @@ export function FAQ() {
 
   return (
     <section className="py-25 relative overflow-hidden">
-      <div className="container-section py-25 flex flex-col lg:flex-row gap-10 lg:gap-20 bg-white/5">
+      <div className="container-section py-25 flex flex-col lg:flex-row gap-10 lg:gap-20 bg-white/5 rounded-lg">
 
         {/* Left Col - Header */}
         <div className="flex-1 lg:max-w-md">
@@ -37,7 +37,7 @@ export function FAQ() {
             <div
               key={index}
               className={`
-                group transition-slow overflow-hidden
+                group transition-slow overflow-hidden rounded-lg
                 ${openIndex === index
                   ? 'bg-white/5 '
                   : 'bg-white/2'
