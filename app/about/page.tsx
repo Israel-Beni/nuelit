@@ -1,5 +1,5 @@
 import { Summary } from "@/components/sections/summary";
-import GoalSection from "@/components/GoalSection";
+// import GoalSection from "@/components/GoalSection";
 import { Values } from "@/components/sections/values";
 import { LogoBand } from "@/components/sections/logo-band";
 
