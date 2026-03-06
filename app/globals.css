@@ -191,44 +191,44 @@
   [data-next-video] img {
     object-fit: cover !important;
   }
-}
 
-/* Typography */
-.text-link {
-  color: var(--color-link);
-  font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 150%;
-}
+  /* Typography */
+  .text-link {
+    color: var(--color-link);
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 150%;
+  }
 
-.text-heading-1 {
-  @apply text-4xl md:text-5xl lg:text-6xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
-}
+  .text-heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+  }
 
-.text-heading-2 {
-  @apply text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
-}
+  .text-heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+  }
 
-.text-heading-3 {
-  @apply text-2xl md:text-3xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
-}
+  .text-heading-3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+  }
 
-.text-heading-4 {
-  @apply text-xl md:text-2xl lg:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
-}
+  .text-heading-4 {
+    @apply text-xl md:text-2xl lg:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+  }
 
-.text-heading-5 {
-  @apply text-lg md:text-xl lg:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
-}
+  .text-heading-5 {
+    @apply text-lg md:text-xl lg:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60;
+  }
 
-.text-subtitle {
-  @apply text-sm md:text-lg uppercase text-white/70;
-}
+  .text-subtitle {
+    @apply text-sm md:text-lg uppercase text-white/70;
+  }
 
-.text-body {
-  @apply text-base md:text-lg text-white/50;
-}
+  .text-body {
+    @apply text-base md:text-lg text-white/50;
+  }
 
-.text-body-sm {
-  @apply text-sm md:text-base text-white/40;
+  .text-body-sm {
+    @apply text-sm md:text-base text-white/40;
+  }
 }
