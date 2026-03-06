@@ -27,7 +27,7 @@ export function Services() {
                 className="absolute -bottom-1/3 left-0 w-full z-0 invert-35" />
 
               <div className="relative z-10">
-                <span className="text-lg font-serif italic text-white/20 block mb-2.5">
+                <span className="text-xl font-serif italic text-white/20 block mb-2.5 group-hover:text-primary/50">
                   {service.id}
                 </span>
                 <h3 className="text-body !text-white/70 font-medium mb-4 group-hover:text-primary transition-colors">
