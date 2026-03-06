@@ -1,6 +1,7 @@
 import { Flame, Star, Send, Phone } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
-type BadgeVariant = 'primary' | 'blue' | 'green' | 'dark' | 'white';
+type BadgeVariant = 'primary' | 'blue' | 'green' | 'dark' | 'white' | 'glass';
 
 interface BadgeProps {
   text: string;
@@ -8,7 +9,12 @@ interface BadgeProps {
   className?: string;
 }
 
-const variantConfig = {
+const variantConfig: {
+  [key in BadgeVariant]: {
+    styles: string;
+    icon?: LucideIcon;
+  }
+} = {
   primary: {
     styles: 'bg-[#FF4D00]/30 text-[#FF4D00]',
     icon: Flame,
@@ -29,6 +35,10 @@ const variantConfig = {
     styles: 'bg-[#FFFFFF]/30 text-[#FFFFFF]',
     icon: Phone,
   },
+  glass: {
+    styles: 'glass border border-white/10 text-white/60',
+    // icon: Phone,
+  },
 };
 
 export function Badge({ text, variant = 'primary', className = '' }: BadgeProps) {
@@ -42,7 +52,7 @@ export function Badge({ text, variant = 'primary', className = '' }: BadgeProps)
       ${styles} 
       ${className}
     `}>
-      <Icon className="size-3.5" />
+      {Icon && <Icon className="size-3.5" />}
       <span>{text}</span>
     </div>
   );
