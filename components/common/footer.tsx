@@ -104,7 +104,7 @@ export function Footer() {
               <Link href="https://www.instagram.com/nuelit_services?igsh=MTAycjF0eTVmOHhrdw%3D%3D&utm_source=qr" target="_blank" className="p-2 text-white/30 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
               </Link>
-              <Link href="linkedin.com/company/nuelit" target="_blank" className="p-2 text-white/30 hover:text-white transition-colors">
+              <Link href="https://www.linkedin.com/company/nuelit" target="_blank" className="p-2 text-white/30 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5 fill-current" />
               </Link>
             </div>
