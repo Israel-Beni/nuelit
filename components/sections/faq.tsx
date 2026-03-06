@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tag } from '../ui/tag';
-
+import Link from 'next/link';
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -26,9 +26,11 @@ export function FAQ() {
             Got questions? We've got answers. Here's everything you need to know about working with us
           </p>
 
-          <Button variant="primary">
-            GET IN TOUCH
-          </Button>
+          <Link href="/contact">
+            <Button variant="primary">
+              GET IN TOUCH
+            </Button>
+          </Link>
         </div>
 
         {/* Right Col - Accordion */}

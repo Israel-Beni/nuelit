@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Video from 'next-video';
 import { Tag } from '../ui/tag';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -39,9 +40,11 @@ export function Hero() {
             Become the candidate all recruiters want to hire
           </p>
 
-          <Button variant="primary" className="mt-8">
-            GET STARTED
-          </Button>
+          <Link href="/pricing">
+            <Button variant="primary" className="mt-8">
+              GET STARTED
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
