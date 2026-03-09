@@ -5,8 +5,8 @@ import { Tag } from "../ui/tag";
 
 export function Summary() {
   return (
-    <section id="summary" className="py-25">
-      <div className="container-section py-25 bg-white/5">
+    <section id="summary" className="py-padding-y-page">
+      <div className="container-section py-padding-y-page bg-white/5 rounded-lg">
         <div className="w-full max-w-3xl mx-auto"><Tag text="OUR STORY" />
 
           {/* Title */}
@@ -28,13 +28,13 @@ export function Summary() {
           </div>
 
           {/* Vision & Mission Grid */}
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 mt-20">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-24 mt-10 md:mt-15 lg:mt-20">
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-white font-medium tracking-wider text-sm">
                 <Eye className="w-5 h-5 text-white" />
                 VISION
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-body">
                 To bridge the gap between talents and their career aspirations through our expertise
               </p>
             </div>
@@ -44,7 +44,7 @@ export function Summary() {
                 <Rocket className="w-5 h-5 text-white" />
                 MISSION
               </div>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-body">
                 To provide recruiter-backed career services that empower talents at all levels to navigate the hiring process with confidence and clarity.
               </p>
             </div>
