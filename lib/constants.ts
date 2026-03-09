@@ -1,10 +1,19 @@
-export const NAV_LINKS = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/#services' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Contact', href: '/contact' }
-] as const;
+export const NAV_LINKS = {
+  desktop: [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Contact', href: '/contact' }
+  ],
+  mobile: [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Contact', href: '/contact' }
+  ]
+} as const;
 
 export const CLIENTS = [
   { name: 'Meta', id: "logo-light--meta_cjdys3" },

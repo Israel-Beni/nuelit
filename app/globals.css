@@ -27,8 +27,8 @@
   --btn-secondary-pale-hover: linear-gradient(180deg, #555566 0%, #333344 100%);
 
   /* ---------------- Spacing ---------------- */
-  --max-width-page: 15.234375rem;
-  /* 390px */
+  --max-width-page: 40rem;
+  /* 640px */
   --padding-page: 1.25rem;
   /* 20px */
   --height-header: 5.25rem;
