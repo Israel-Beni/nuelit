@@ -6,15 +6,15 @@ export function LogoBand() {
   const duplicatedClients = [...CLIENTS, ...CLIENTS];
 
   return (
-    <section id="logo-band" className="py-25 overflow-hidden">
+    <section id="logo-band" className="py-padding-y-page overflow-hidden">
       <div className="container-section">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          <p className="text-subtitle max-w-1/5 text-center lg:text-left leading-relaxed shrink-0">
+        <div className="flex flex-col lg:flex-row items-center gap-5 md:gap-8 lg:gap-16">
+          <p className="text-subtitle max-w-full lg:max-w-1/5 text-center lg:text-left shrink-0">
             Companies our clients have landed jobs:
           </p>
 
-          <div className="flex-1 relative overflow-hidden mask-marquee">
-            <div className="flex items-center gap-12 md:gap-20 w-max animate-marquee py-4">
+          <div className="flex-1 w-full relative overflow-hidden mask-marquee">
+            <div className="flex items-center gap-8 md:gap-12 md:gap-20 w-max animate-marquee py-4">
               {duplicatedClients.map((client, index) => (
                 <div
                   key={`${client.name}-${index}`}
@@ -27,7 +27,7 @@ export function LogoBand() {
                     height={90}
                     crop="fit"
                     gravity="center"
-                    className="h-8 md:h-12 w-auto object-contain grayscale brightness-200"
+                    className="h-10 md:h-12 w-auto object-contain grayscale brightness-200"
                   />
                 </div>
               ))}
