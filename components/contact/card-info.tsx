@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge } from '../ui/badge';
+import Image from "next/image"
 
 interface InfoCardProps {
   tag?: string;
@@ -25,7 +26,7 @@ export function InfoCard({ tag, title, subtitle, description, footer, image, cla
       </div>
 
       {description && (
-        <p className="text-heading-5">
+        <p className="text-heading-6">
           {description}
         </p>
       )}
@@ -38,7 +39,7 @@ export function InfoCard({ tag, title, subtitle, description, footer, image, cla
 
       {image && (
         <div className="absolute inset-0 z-[-1]">
-          <img src={image} alt={title} className="w-full h-full object-cover opacity-60" />
+          <Image width="200" height="200" src={image} alt={title} className="w-full h-full object-cover opacity-60" />
         </div>
       )}
     </div>
