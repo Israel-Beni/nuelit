@@ -1,21 +1,19 @@
 "use client";
 
 import { UserRound, Search, ShieldCheck, Heart } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
 import { SupportBanner } from "./support-banner";
 
 
 export function Values() {
   return (
-    <section className="py-25">
-      <div className="container-section space-y-20">
+    <section className="py-padding-y-page">
+      <div className="container-section space-y-10 md:space-y-15 lg:space-y-20">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <h2 className="text-heading-2">
             Core <span className="emphasis">values</span>
           </h2>
-          <p className="text-body-sm uppercase text-white/50 w-full max-w-sm">
+          <p className="text-subtitle uppercase text-white/50 w-full max-w-sm">
             THESE ARE THE PRINCIPLES THAT GUIDE HOW WE WORK WITH YOU AND WHY OUR CLIENTS TRUST US TO HELP SHAPE THEIR CAREERS.
           </p>
         </div>
@@ -33,7 +31,7 @@ export function Values() {
                   {value.title}
                 </h3>
               </div>
-              <p className="text-body-sm text-white">
+              <p className="text-body-sm text-white/60">
                 {value.description}
               </p>
             </div>
