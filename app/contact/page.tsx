@@ -13,16 +13,16 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start h-max">
           {/* Left Column */}
-          <div className="md:col-span-3 flex flex-col gap-6">
+          <div className="md:col-span-3 flex flex-col sm:max-md:flex-row gap-5">
             <InfoCard
               tag="HIRE US"
-              title="Have something"
-              subtitle="on your mind? We're all ears."
+              title="We're "
+              subtitle="all ears"
               description="We always reply within 48 hours."
               footer="hello@nuelit.com"
               className="grow"
             />
-            <div className="grow rounded-lg overflow-hidden glass">
+            <div className="grow rounded-lg overflow-hidden glass max-h-60 flex justify-center items-center">
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600"
                 alt="Office Space"
@@ -39,8 +39,8 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column */}
-          <div className="md:col-span-3 flex flex-col gap-6">
-            <div className="grow rounded-lg overflow-hidden glass">
+          <div className="md:col-span-3 flex flex-col sm:max-md:flex-row gap-5">
+            <div className="grow rounded-lg overflow-hidden glass max-h-60 flex justify-center items-center">
               <Image
                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=600"
                 alt="Collaboration"
@@ -52,7 +52,8 @@ export default function ContactPage() {
             <InfoCard
               tag="GROWTH"
               title="Start the journey"
-              subtitle="to your career success"
+              subtitle="the journey"
+              description="to your career success"
               className="grow"
               footer="hello@nuelit.com"
             />
