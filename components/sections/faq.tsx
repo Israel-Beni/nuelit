@@ -10,19 +10,21 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-25 relative overflow-hidden">
-      <div className="container-section py-25 flex flex-col lg:flex-row gap-10 lg:gap-20 bg-white/5 rounded-lg">
+    <section className="py-16 md:py-25 relative overflow-hidden">
+      <div className="container-section py-16 md:py-25 flex flex-col lg:flex-row gap-12 lg:gap-20 bg-white/5 rounded-2xl md:rounded-3xl">
 
         {/* Left Col - Header */}
-        <div className="flex-1 lg:max-w-md">
-          <Tag text="FAQ" className="mb-8" />
+        <div className="flex-1 lg:max-w-md text-center lg:text-left px-4 md:px-0">
+          <div className="flex justify-center lg:justify-start">
+            <Tag text="FAQ" className="mb-5 md:mb-8" />
+          </div>
 
-          <h2 className="text-heading-2 mb-8">
-            Frequently <span className="text-white/40">Asked</span> <br />
-            <span className="emphasis">Question</span>
+          <h2 className="text-heading-2 mb-5 md:mb-8">
+            Frequently
+            <span className="emphasis"> Asked Question</span>
           </h2>
 
-          <p className="text-subtitle my-10">
+          <p className="text-subtitle my-6 md:my-10 max-w-xl">
             Got questions? We've got answers. Here's everything you need to know about working with us
           </p>
 
@@ -34,37 +36,37 @@ export function FAQ() {
         </div>
 
         {/* Right Col - Accordion */}
-        <div className="flex-[1.2] flex flex-col gap-4">
+        <div className="flex-[1.2] flex flex-col gap-3 md:gap-4 px-2 md:px-0">
           {FAQ_ITEMS.map((item, index) => (
             <div
               key={index}
               className={`
-                group transition-slow overflow-hidden rounded-lg
+                group transition-slow overflow-hidden rounded-xl
                 ${openIndex === index
-                  ? 'bg-white/5 '
-                  : 'bg-white/2'
+                  ? 'bg-white/10'
+                  : 'bg-white/5'
                 }
               `}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-8 py-8 flex items-center justify-between text-left"
+                className="w-full px-6 py-6 md:px-8 md:py-8 flex items-center justify-between text-left"
               >
-                <span className={`text-body !text-white font-medium transition-slow`}>
+                <span className={`text-body !text-white font-medium transition-slow pr-4`}>
                   {item.question}
                 </span>
-                <div className={`flex-shrink-0 transition-transform duration-500 ${openIndex === index ? 'rotate-180' : ''}`}>
-                  {openIndex === index ? <Minus className="w-5 h-5 text-white" /> : <Plus className="w-5 h-5 text-white/30" />}
+                <div className={`flex-shrink-0 transition-slow ${openIndex === index ? 'rotate-180' : ''}`}>
+                  {openIndex === index ? <Minus className="w-4 h-4 md:w-5 md:h-5 text-white" /> : <Plus className="w-4 h-4 md:w-5 md:h-5 text-white/30" />}
                 </div>
               </button>
 
               <div
                 className={`
                   transition-slow
-                  ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+                  ${openIndex === index ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0'}
                 `}
               >
-                <div className="px-8 pb-8 text-body-sm max-w-2xl">
+                <div className="px-6 pb-6 md:px-8 md:pb-8 text-body max-w-xl">
                   {item.answer}
                 </div>
               </div>
@@ -74,10 +76,10 @@ export function FAQ() {
       </div>
 
       {/* Background Decor */}
-      <div className="absolute top-0 left-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
-      <div className="absolute top-0 right-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
-      <div className="absolute bottom-0 left-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
-      <div className="absolute bottom-0 right-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
+      <div className="hidden md:block absolute top-0 left-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
+      <div className="hidden md:block absolute top-0 right-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
+      <div className="hidden md:block absolute bottom-0 left-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
+      <div className="hidden md:block absolute bottom-0 right-8 text-white/5 text-4xl font-thin select-none pointer-events-none">+</div>
     </section>
   );
 }
