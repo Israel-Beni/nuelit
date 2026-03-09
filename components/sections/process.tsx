@@ -3,34 +3,34 @@ import { Tag } from '@/components/ui/tag';
 
 export function Process() {
   return (
-    <section id="how-it-works" className="py-25 bg-black/5">
+    <section id="how-it-works" className="py-padding-y-page bg-black/5">
       <div className="container-section">
-        <div className="text-center mb-20 flex flex-col items-center gap-5">
+        <div className="text-center mb-12 md:mb-20 flex flex-col items-center gap-4 md:gap-5">
           <Tag text="The Process" />
           <h2 className="text-heading-2">
             How it <span className="emphasis">works</span>
           </h2>
-          <p className="text-subtitle max-w-md mx-auto leading-relaxed">
+          <p className="text-subtitle max-w-xl mx-auto">
             From your first click to your next big career move
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative">
           {/* Connector Line (Desktop) */}
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-white/5 -z-10" />
 
           {STEPS.map((step, index) => (
             <div key={step.id} className="group relative">
-              <div className="p-8 rounded-lg glass border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 h-full flex flex-col">
-                <span className="text-xl font-serif italic text-white/20 mb-6 group-hover:text-primary/50 transition-colors">
+              <div className="p-6 md:p-8 rounded-xl glass border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 h-full flex flex-col">
+                <span className="text-lg md:text-xl font-serif italic text-white/20 mb-4 md:mb-6 group-hover:text-primary/50 transition-colors">
                   {step.id}
                 </span>
 
-                <h3 className="text-heading-5 mb-4 !text-white">
+                <h3 className="text-heading-5 mb-3 md:mb-4 !text-white">
                   {step.title}
                 </h3>
 
-                <p className="text-body-sm text-white/50 leading-relaxed">
+                <p className="text-body  leading-relaxed">
                   {step.desc}
                 </p>
               </div>
