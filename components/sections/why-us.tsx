@@ -16,7 +16,7 @@ export function WhyUs() {
               Expertise that,
               <span className="emphasis"> sets you apart</span>
             </h2>
-            <p className="text-body mb-5 md:mb-12 mx-auto lg:mx-0 max-w-xl md:max-w-full">
+            <p className="text-subtitle mb-5 md:mb-12 mx-auto lg:mx-0 max-w-xl md:max-w-full">
               In a world of AI-generated content, we believe in the power of human intuition.
               Our recruiting specialists bring a decade of experience to your career journey.
             </p>

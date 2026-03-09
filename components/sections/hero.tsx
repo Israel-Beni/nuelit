@@ -38,7 +38,7 @@ export function Hero() {
             to <br className="hidden lg:block" /> Hiring Managers
           </h1>
 
-          <p className="text-body mt-4 md:mt-8 opacity-80">
+          <p className="text-subtitle mt-4 md:mt-8 opacity-80">
             Become the candidate all recruiters want to hire
           </p>
 
