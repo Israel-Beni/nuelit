@@ -29,8 +29,10 @@
   /* ---------------- Spacing ---------------- */
   --max-width-page: 40rem;
   /* 640px */
-  --padding-page: 1.25rem;
+  --padding-x-page: 1.25rem;
   /* 20px */
+  --padding-y-page: 3.75rem;
+  /* 60px */
   --height-header: 5.25rem;
   /* 84px */
   --vertical-offset-header: 0.625rem;
@@ -47,8 +49,10 @@
   :root {
     --max-width-page: 50.625rem;
     /* 810px */
-    --padding-page: 1.875rem;
+    --padding-x-page: 1.875rem;
     /* 30px */
+    --padding-y-page: 5rem;
+    /* 80px */
     --vertical-offset-header: 1.25rem;
   }
 }
@@ -57,8 +61,10 @@
   :root {
     --max-width-page: 75rem;
     /* 1200px */
-    --padding-page: 2.5rem;
+    --padding-x-page: 2.5rem;
     /* 40px */
+    --padding-y-page: 6.25rem;
+    /* 100px */
   }
 }
 
@@ -88,7 +94,8 @@
 
   /* Spacing */
   --spacing-page-max-width: var(--max-width-page);
-  --spacing-padding-page: var(--padding-page);
+  --spacing-padding-x-page: var(--padding-x-page);
+  --spacing-padding-y-page: var(--padding-y-page);
   --height-header: var(--height-header);
 }
 
@@ -127,14 +134,14 @@
   .container-section {
     width: 100%;
     max-width: var(--max-width-page);
-    padding-inline: var(--padding-page);
+    padding-inline: var(--padding-x-page);
     margin-inline: auto;
   }
 
   .container-header,
   .container-section {
     max-width: var(--max-width-page);
-    padding-inline: var(--padding-page);
+    padding-inline: var(--padding-x-page);
     margin-inline: auto;
   }
 
