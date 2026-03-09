@@ -27,23 +27,23 @@ export function Hero() {
         </div>
 
         {/* Content */}
-        <div className="relative text-center lg:text-left flex flex-col justify-center gap-5 md:max-w-[48%] py-padding-y-page">
+        <div className="relative text-center lg:text-left flex flex-col justify-center max-w-3/4 lg:max-w-[48%] py-padding-y-page">
           <div className="flex justify-center lg:justify-start">
             <Tag text="Welcome to Nuelit" className='bg-background/70' />
           </div>
 
-          <h1 className="text-4xl md:text-heading-1 mt-5 leading-tight">
-            Making you <br />
-            <span className="emphasis">irresistible</span> to <br />
-            Hiring Managers
+          <h1 className="text-heading-1 mt-5 leading-tight">
+            Making you
+            <span className="emphasis"> irresistible </span>
+            to <br className="hidden lg:block" /> Hiring Managers
           </h1>
 
-          <p className="text-base md:text-subtitle mt-4 md:mt-8 opacity-80">
+          <p className="text-body mt-4 md:mt-8 opacity-80">
             Become the candidate all recruiters want to hire
           </p>
 
           <Link href="/pricing" className="mt-6 md:mt-8">
-            <Button variant="primary" className="w-full md:w-fit">
+            <Button variant="primary">
               GET STARTED
             </Button>
           </Link>
