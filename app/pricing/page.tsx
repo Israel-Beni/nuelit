@@ -220,8 +220,8 @@ const PLANS: PricingPlan[] = [
     basePrice: 399,
     description: 'Upgrade your career with extensive, personalized support.',
     levels: [
-      { name: 'ONE', price: 399, originalPrice: 499, description: 'One-on-one intensive coaching session for immediate impact.' },
-      { name: 'THREE', price: 899, originalPrice: 1199, description: 'Three comprehensive sessions to build a long-term roadmap.' }
+      { name: 'ONE', price: 179, originalPrice: 299, description: 'One-on-one intensive coaching session for immediate impact.' },
+      { name: 'THREE', price: 399, originalPrice: 499, description: 'Three comprehensive sessions to build a long-term roadmap.' }
     ],
     features: [
       'Pre-coaching needs assessment',
