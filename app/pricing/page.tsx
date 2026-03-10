@@ -77,7 +77,6 @@ export default function PricingPage() {
                   clientId: "test",
                   components: "buttons",
                   intent: "capture",
-                  theme: "light"
                 }}>
                   <PayPalButtons
                     style={{
