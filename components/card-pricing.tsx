@@ -19,9 +19,10 @@ interface CardPricingProps {
   plan: PricingPlan;
   onAddToCart: (plan: PricingPlan, selectedLevelIndex?: number) => void;
   isSelected?: boolean;
+  showOriginalPrice?: boolean;
 }
 
-export function CardPricing({ plan, onAddToCart, isSelected }: CardPricingProps) {
+export function CardPricing({ plan, onAddToCart, isSelected, showOriginalPrice = true }: CardPricingProps) {
   const [levelIndex, setLevelIndex] = useState(0);
 
   const currentPrice = plan.levels ? plan.levels[levelIndex].price : plan.basePrice;
@@ -41,11 +42,13 @@ export function CardPricing({ plan, onAddToCart, isSelected }: CardPricingProps)
 
       <div className="mb-6 flex items-baseline gap-2">
         <span className="text-4xl font-bold text-white">${currentPrice}</span>
-        <span className="text-white/40 line-through text-xl">
-          ${plan.levels
-            ? (plan.levels[levelIndex].originalPrice || Math.round(currentPrice * 1.2))
-            : (plan.originalPrice || Math.round(currentPrice * 1.2))}
-        </span>
+        {showOriginalPrice && (
+          <span className="text-white/40 line-through text-xl">
+            ${plan.levels
+              ? (plan.levels[levelIndex].originalPrice || Math.round(currentPrice * 1.2))
+              : (plan.originalPrice || Math.round(currentPrice * 1.2))}
+          </span>
+        )}
       </div>
 
       {plan.levels && (
@@ -91,7 +94,7 @@ export function CardPricing({ plan, onAddToCart, isSelected }: CardPricingProps)
       </Button>
 
       <div className="space-y-4">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">What's Included:</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-white/50">What's Included:</p>
         {plan.features.map((feature, i) => (
           <div key={i} className="flex gap-3 items-start group/feature">
             <div className="mt-1 transition-transform duration-300 group-hover/feature:scale-110">

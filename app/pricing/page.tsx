@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { CardPricing, PricingPlan } from '@/components/card-pricing';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { Tag } from '@/components/ui/tag';
+import { sendPaymentConfirmationEmail } from '@/app/actions/email-actions';
 
 export default function PricingPage() {
   const [cart, setCart] = useState<{ planId: string; levelIndex?: number }[]>([]);
@@ -31,9 +32,9 @@ export default function PricingPage() {
 
   return (
     <div className="w-full rtext-white selection:bg-white selection:text-black">
-      <section id="pricing-section" className="container-section relative z-10 py-25">
+      <section id="pricing-section" className="container-section relative z-10 py-padding-y-page">
         {/* Header */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-10 md:mb-16 lg:mb-24">
           <Tag text="Pricing" />
 
           <h1 className="text-heading-1 mb-8 mt-5">
@@ -47,13 +48,14 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {PLANS.map(plan => (
             <CardPricing
               key={plan.id}
               plan={plan}
               onAddToCart={handleAddToCart}
               isSelected={cart.some(item => item.planId === plan.id)}
+              showOriginalPrice={false}
             />
           ))}
         </div>
@@ -61,20 +63,21 @@ export default function PricingPage() {
         {/* Checkout Summary */}
         {cart.length > 0 && (
           <div className="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 animate-in fade-in slide-in-from-bottom-8 duration-500">
-            <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-lg p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-              <div>
-                <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1">Items Selected ({cart.length})</p>
+            <div className="relative z-200 max-h-[75vh] overflow-y-scroll h-full !bg-white/40 glass border border-white/20 rounded-lg p-8 flex flex-col md:flex-row items-start justify-start md:justify-between gap-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+              <div className='shrink-0'>
+                <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mb-1">Items Selected ({cart.length})</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-3xl font-bold">${totalPrice}</span>
-                  <span className="text-white/30 text-xs">TOTAL DUE</span>
+                  <span className="text-white/70 text-xs font-bold">TOTAL DUE</span>
                 </div>
               </div>
 
-              <div className="w-full md:w-70">
+              <div className="w-full grow h-full overflow-y-scroll text-white">
                 <PayPalScriptProvider options={{
                   clientId: "test",
                   components: "buttons",
-                  intent: "capture"
+                  intent: "capture",
+                  theme: "light"
                 }}>
                   <PayPalButtons
                     style={{
@@ -92,6 +95,33 @@ export default function PricingPage() {
                           }
                         }]
                       } as any);
+                    }}
+                    onApprove={async (data, actions) => {
+                      if (!actions.order) return;
+                      const order = await actions.order.capture();
+
+                      const payer = order.payer;
+                      if (payer && payer.email_address) {
+                        const selectedItems = cart.map(item => {
+                          const plan = PLANS.find(p => p.id === item.planId);
+                          const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
+                          return `${plan?.name}${level ? ` (${level})` : ''}`;
+                        });
+
+                        try {
+                          await sendPaymentConfirmationEmail({
+                            name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
+                            email: payer.email_address,
+                            amount: totalPrice.toString(),
+                            items: selectedItems
+                          });
+                          alert('Payment successful! A confirmation email has been sent.');
+                          setCart([]); // Clear cart after success
+                        } catch (error) {
+                          console.error('Failed to send confirmation email:', error);
+                          alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
+                        }
+                      }
                     }}
                   />
                 </PayPalScriptProvider>
@@ -114,7 +144,7 @@ const PLANS: PricingPlan[] = [
     description: 'Launch your career with an ATS-friendly edge. Suited for 0-2 years experience.',
     levels: [
       { name: 'ENTRY', price: 249, originalPrice: 349, description: 'Launch your career with an ATS-friendly edge. Suited for 0-2 years experience.' },
-      { name: 'PRO', price: 349, originalPrice: 449, description: 'Accelerate your growth with professional storytelling. Suited for 3-7 years experience.' },
+      { name: 'PRO', price: 399, originalPrice: 449, description: 'Accelerate your growth with professional storytelling. Suited for 3-7 years experience.' },
       { name: 'EXECUTIVE', price: 549, originalPrice: 699, description: 'Command leadership roles with a high-impact profile. Suited for 8+ years experience.' }
     ],
     features: [
@@ -198,7 +228,7 @@ const PLANS: PricingPlan[] = [
       'Pre-coaching needs assessment',
       '60 minute per session with your career coach',
       'Career strategy roadmap development',
-      'Follow-up support and resource package'
+      'Assessment and detailed report'
     ]
   },
   {
