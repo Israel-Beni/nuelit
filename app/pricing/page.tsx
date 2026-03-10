@@ -72,7 +72,7 @@ export default function PricingPage() {
                 </div>
               </div>
 
-              <div className="w-full grow h-full overflow-y-scroll text-white">
+              <div className="w-full grow h-full text-white">
                 <PayPalScriptProvider options={{
                   clientId: "test",
                   components: "buttons",
