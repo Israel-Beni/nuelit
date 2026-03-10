@@ -2,8 +2,8 @@ import React from 'react';
 import { Tag } from "@/components/ui/tag";
 
 export const metadata = {
-  title: "Terms of Service | Neulit",
-  description: "Terms of Service for Neulit services.",
+  title: "Terms of Service | Nuelit",
+  description: "Terms of Service for Nuelit services.",
 };
 
 export default function TermsPage() {
@@ -40,11 +40,11 @@ export default function TermsPage() {
 const terms: { title: string; description: string[] }[] = [
   {
     title: "1. Acceptance of Terms",
-    description: ["By accessing or using Neulit's services, you agree to be bound by these Terms of Service."],
+    description: ["By accessing or using Nuelit's services, you agree to be bound by these Terms of Service."],
   },
   {
     title: "2. Description of Service",
-    description: ["Neulit provides career development services, including resume writing, career coaching, and website development."],
+    description: ["Nuelit provides career development services, including resume writing, career coaching, and website development."],
   },
   {
     title: "3. User Responsibilities",
@@ -52,10 +52,10 @@ const terms: { title: string; description: string[] }[] = [
   },
   {
     title: "4. Intellectual Property",
-    description: ["All content provided as part of our services is the property of Neulit or its licensors and is protected by intellectual property laws."],
+    description: ["All content provided as part of our services is the property of Nuelit or its licensors and is protected by intellectual property laws."],
   },
   {
     title: "5. Limitation of Liability",
-    description: ["Neulit shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services."],
+    description: ["Nuelit shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services."],
   },
 ];

@@ -11,7 +11,7 @@ export function Summary() {
 
           {/* Title */}
           <h1 className="text-heading-1 mb-5 mt-8">
-            How Neulit <span className="emphasis">came to life</span>
+            How Nuelit <span className="emphasis">came to life</span>
           </h1>
 
           {/* Story Description */}

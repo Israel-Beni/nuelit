@@ -33,7 +33,7 @@ export function GoalSection() {
 
           <div className="relative z-10 space-y-10">
             {/* Small Logo */}
-            <div className="text-2xl font-serif text-white/80 italic">Neulit</div>
+            <div className="text-2xl font-serif text-white/80 italic">Nuelit</div>
 
             {/* Headline */}
             <h2 className="text-3xl lg:text-4xl font-medium leading-tight">
@@ -59,10 +59,10 @@ export function GoalSection() {
                 MEET THE TEAM
               </Link>
               <Link
-                href="mailto:HELLO@NEULIT.COM"
+                href="mailto:HELLO@NUELIT.COM"
                 className="px-6 py-3 border border-white/10 rounded-full text-xs font-bold tracking-widest hover:bg-white/5 transition-colors whitespace-nowrap"
               >
-                HELLO@NEULIT.COM
+                HELLO@NUELIT.COM
               </Link>
             </div>
           </div>

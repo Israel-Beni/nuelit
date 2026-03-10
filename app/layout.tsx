@@ -5,7 +5,7 @@ import { Footer } from "@/components/common/footer";
 import { geistSans, geistMono, arialRounded, playfairDisplay } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Neulit - Professional Career Services",
+  title: "Nuelit - Professional Career Services",
   description: "Find your career breakthrough with Nuelit. We bridge the gap between top talent and elite employers using data-driven matching. Empower your career and change your life now.",
 };
 

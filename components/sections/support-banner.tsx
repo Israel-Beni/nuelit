@@ -18,7 +18,7 @@ export function SupportBanner() {
             Hi there, the <span className="emphasis">support team here</span>
           </span>
           <span className="block text-body-sm uppercase">
-            FEEL FREE TO ASK IF ANYTHING'S UNCLEAR ABOUT NEULIT
+            FEEL FREE TO ASK IF ANYTHING'S UNCLEAR ABOUT NUELIT
           </span>
         </div>
       </div>
