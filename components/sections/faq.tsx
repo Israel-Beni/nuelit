@@ -142,16 +142,16 @@ const FAQ_ITEMS = [
       </>
     )
   },
-  {
-    question: "Why do I need a personal website for my career?",
-    answer: () => (
-      <p>A personal website serves as a digital portfolio that you own. It allows you to showcase your work, personality, and professional brand in a way a resume cannot, significantly increasing your visibility and credibility to recruiters.</p>
-    )
-  },
-  {
-    question: "What is included in the Website Development service?",
-    answer: () => (
-      <p>We create a professional, responsive personal website tailored to your career goals. This includes custom design, mobile optimization, and a clear call-to-action for recruiters or clients.</p>
-    )
-  }
+  // {
+  //   question: "Why do I need a personal website for my career?",
+  //   answer: () => (
+  //     <p>A personal website serves as a digital portfolio that you own. It allows you to showcase your work, personality, and professional brand in a way a resume cannot, significantly increasing your visibility and credibility to recruiters.</p>
+  //   )
+  // },
+  // {
+  //   question: "What is included in the Website Development service?",
+  //   answer: () => (
+  //     <p>We create a professional, responsive personal website tailored to your career goals. This includes custom design, mobile optimization, and a clear call-to-action for recruiters or clients.</p>
+  //   )
+  // }
 ];

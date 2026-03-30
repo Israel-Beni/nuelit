@@ -230,22 +230,22 @@ const PLANS: PricingPlan[] = [
       'Assessment and detailed report'
     ]
   },
-  {
-    id: 'development',
-    name: 'DEVELOPMENT',
-    badge: 'WEB DEVELOPMENT',
-    basePrice: 499,
-    description: 'Professional web development tailored to your career goals.',
-    levels: [
-      { name: 'PORTFOLIO', price: 499, originalPrice: 649, description: 'Sleek personal portfolio to showcase your work and wins.' },
-      { name: 'BUSINESS', price: 999, originalPrice: 1299, description: 'Professional business site with advanced features.' },
-      { name: 'APP', price: 2499, originalPrice: 2999, description: 'Custom web application with complex functionality.' }
-    ],
-    features: [
-      'Fully responsive and mobile-friendly',
-      'Custom design reflective of your brand',
-      'Optimized for speed and SEO',
-      'Source code and deployment support'
-    ]
-  }
+  // {
+  //   id: 'development',
+  //   name: 'DEVELOPMENT',
+  //   badge: 'WEB DEVELOPMENT',
+  //   basePrice: 499,
+  //   description: 'Professional web development tailored to your career goals.',
+  //   levels: [
+  //     { name: 'PORTFOLIO', price: 499, originalPrice: 649, description: 'Sleek personal portfolio to showcase your work and wins.' },
+  //     { name: 'BUSINESS', price: 999, originalPrice: 1299, description: 'Professional business site with advanced features.' },
+  //     { name: 'APP', price: 2499, originalPrice: 2999, description: 'Custom web application with complex functionality.' }
+  //   ],
+  //   features: [
+  //     'Fully responsive and mobile-friendly',
+  //     'Custom design reflective of your brand',
+  //     'Optimized for speed and SEO',
+  //     'Source code and deployment support'
+  //   ]
+  // }
 ];

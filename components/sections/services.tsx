@@ -60,5 +60,5 @@ const SERVICES = [
   { id: '04', title: 'Career Coaching', desc: 'Strategic guidance to navigate your career with confidence.' },
   { id: '05', title: 'LinkedIn Optimization', desc: 'A LinkedIn profile that gets you noticed by recruiters.' },
   { id: '06', title: 'Interview Preparation', desc: 'Master your pitch with 60 minutes of expert coaching.' },
-  { id: '07', title: 'Website Development', desc: 'Get your personal website. An online presence through a personal website is key for legitimacy.' },
+  // { id: '07', title: 'Website Development', desc: 'Get your personal website. An online presence through a personal website is key for legitimacy.' },
 ];
