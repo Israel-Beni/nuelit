@@ -1,8 +1,10 @@
 import { Tag } from "@/components/ui/tag";
 
-export const metadata = {
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
   title: "Privacy Policy | Nuelit",
-  description: "Privacy Policy for Nuelit services.",
+  description: "Learn how Nuelit handles and protects your personal information.",
 };
 
 export default function PrivacyPage() {

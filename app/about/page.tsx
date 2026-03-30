@@ -3,9 +3,15 @@ import { GoalSection } from "@/components/sections/goal-section";
 import { Values } from "@/components/sections/values";
 import { LogoBand } from "@/components/sections/logo-band";
 
-export const metadata = {
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
   title: "About Us | Nuelit",
-  description: "Learn how Nuelit bridging the gap between talents and their career aspirations through our recruiter-backed expertise.",
+  description: "Learn how Nuelit bridges the gap between top talent and elite employers through recruiter-backed career services and strategic coaching.",
+  openGraph: {
+    title: "About Us | Nuelit",
+    description: "Learn how Nuelit bridges the gap between top talent and elite employers.",
+  },
 };
 
 export default function AboutPage() {

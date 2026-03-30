@@ -1,9 +1,11 @@
 import React from 'react';
 import { Tag } from "@/components/ui/tag";
 
-export const metadata = {
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
   title: "Terms of Service | Nuelit",
-  description: "Terms of Service for Nuelit services.",
+  description: "Read the Terms of Service for using Nuelit's career development services.",
 };
 
 export default function TermsPage() {

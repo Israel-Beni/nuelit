@@ -4,9 +4,61 @@ import { Header } from "@/components/common/header";
 import { Footer } from "@/components/common/footer";
 import { geistSans, geistMono, arialRounded, playfairDisplay } from "./fonts";
 
+const siteUrl = "https://www.nuelit.com";
+
 export const metadata: Metadata = {
-  title: "Nuelit - Professional Career Services",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Nuelit | Professional Career Services",
+    template: "%s | Nuelit"
+  },
   description: "Find your career breakthrough with Nuelit. We bridge the gap between top talent and elite employers using data-driven matching. Empower your career and change your life now.",
+  keywords: ["career services", "resume writing", "career coaching", "ATS optimization", "recruiter", "job search"],
+  authors: [{ name: "Nuelit Team" }],
+  creator: "Nuelit",
+  publisher: "Nuelit",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Nuelit",
+    title: "Nuelit | Professional Career Services",
+    description: "Empowering careers through professional writing and recruiter-backed coaching.",
+    images: [
+      {
+        url: "/logo-light--nuelit.svg",
+        width: 1200,
+        height: 630,
+        alt: "Nuelit - Career Breakthrough",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nuelit | Professional Career Services",
+    description: "Empowering careers through professional writing and recruiter-backed coaching.",
+    images: ["/logo-light--nuelit.svg"],
+    creator: "@nuelit",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "YOUR_GSC_VERIFICATION_ID_HERE", // User to replace with actual ID
+  },
 };
 
 export default function RootLayout({
