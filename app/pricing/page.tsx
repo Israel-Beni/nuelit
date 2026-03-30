@@ -73,70 +73,81 @@ export default function PricingPage() {
               </div>
 
               <div className="w-full grow h-full text-white">
-                <PayPalScriptProvider options={{
-                  clientId: "test",
-                  components: "buttons",
-                  intent: "capture",
-                }}>
-                  <PayPalButtons
-                    style={{
-                      layout: "vertical",
-                      color: "gold",
-                      shape: "pill",
-                      label: "checkout",
-                      height: 54
-                    }}
-                    createOrder={(data, actions) => {
-                      return actions.order.create({
-                        purchase_units: [{
-                          amount: {
-                            value: totalPrice.toString()
-                          }
-                        }]
-                      } as any);
-                    }}
-                    onApprove={async (data, actions) => {
-                      if (!actions.order) return;
-                      try {
-                        const order = await actions.order.capture();
+                {process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ? (
+                  <PayPalScriptProvider options={{
+                    clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+                    components: "buttons",
+                    intent: "capture",
+                  }}>
+                    <PayPalButtons
+                      style={{
+                        layout: "vertical",
+                        color: "gold",
+                        shape: "pill",
+                        label: "checkout",
+                        height: 54
+                      }}
+                      createOrder={(data, actions) => {
+                        return actions.order.create({
+                          purchase_units: [{
+                            amount: {
+                              value: totalPrice.toString()
+                            }
+                          }]
+                        } as any);
+                      }}
+                      onApprove={async (data, actions) => {
+                        if (!actions.order) return;
+                        try {
+                          const order = await actions.order.capture();
 
-                        const payer = order.payer;
-                        if (payer && payer.email_address) {
-                          const selectedItems = cart.map(item => {
-                            const plan = PLANS.find(p => p.id === item.planId);
-                            const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
-                            return `${plan?.name}${level ? ` (${level})` : ''}`;
-                          });
-
-                          try {
-                            await sendPaymentConfirmationEmail({
-                              name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
-                              email: payer.email_address,
-                              amount: totalPrice.toString(),
-                              items: selectedItems
+                          const payer = order.payer;
+                          if (payer && payer.email_address) {
+                            const selectedItems = cart.map(item => {
+                              const plan = PLANS.find(p => p.id === item.planId);
+                              const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
+                              return `${plan?.name}${level ? ` (${level})` : ''}`;
                             });
-                            alert('Payment successful! A confirmation email has been sent.');
-                          } catch (error) {
-                            console.error('Failed to send confirmation email:', error);
-                            alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
-                          } finally {
-                            setCart([]); // Always clear cart after successful payment capture
+
+                            try {
+                              await sendPaymentConfirmationEmail({
+                                name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
+                                email: payer.email_address,
+                                amount: totalPrice.toString(),
+                                items: selectedItems
+                              });
+                              alert('Payment successful! A confirmation email has been sent.');
+                            } catch (error) {
+                              console.error('Failed to send confirmation email:', error);
+                              alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
+                            } finally {
+                              setCart([]);
+                            }
                           }
+                        } catch (error) {
+                          console.error('Capture failed', error);
+                          alert('Payment could not be captured. Please try again.');
                         }
-                      } catch (error) {
-                        console.error('Capture failed', error);
-                        alert('Payment could not be captured. Please try again.');
-                      }
-                    }}
-                    onError={(err) => {
-                      console.error('PayPal Checkout error:', err);
-                      alert('An error occurred during checkout. Please try again.');
-                    }}
-                    onCancel={() => {
-                      alert('Payment process was cancelled.');
-                    }}
-                  />
-                </PayPalScriptProvider>
+                      }}
+                      onError={(err) => {
+                        console.error('PayPal Checkout error:', err);
+                        alert('An error occurred during checkout. Please try again.');
+                      }}
+                      onCancel={() => {
+                        alert('Payment process was cancelled.');
+                      }}
+                    />
+                  </PayPalScriptProvider>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full min-h-[150px] p-4 text-center border border-white/10 rounded-lg bg-black/20">
+                    <p className="text-sm font-medium text-white/90">
+                      Payments processing are temporarily paused.
+                    </p>
+                    <p className="text-xs text-white/60 mt-1">
+                      We are not accepting payments at this moment. Please try again later.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
