@@ -97,30 +97,43 @@ export default function PricingPage() {
                     }}
                     onApprove={async (data, actions) => {
                       if (!actions.order) return;
-                      const order = await actions.order.capture();
+                      try {
+                        const order = await actions.order.capture();
 
-                      const payer = order.payer;
-                      if (payer && payer.email_address) {
-                        const selectedItems = cart.map(item => {
-                          const plan = PLANS.find(p => p.id === item.planId);
-                          const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
-                          return `${plan?.name}${level ? ` (${level})` : ''}`;
-                        });
-
-                        try {
-                          await sendPaymentConfirmationEmail({
-                            name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
-                            email: payer.email_address,
-                            amount: totalPrice.toString(),
-                            items: selectedItems
+                        const payer = order.payer;
+                        if (payer && payer.email_address) {
+                          const selectedItems = cart.map(item => {
+                            const plan = PLANS.find(p => p.id === item.planId);
+                            const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
+                            return `${plan?.name}${level ? ` (${level})` : ''}`;
                           });
-                          alert('Payment successful! A confirmation email has been sent.');
-                          setCart([]); // Clear cart after success
-                        } catch (error) {
-                          console.error('Failed to send confirmation email:', error);
-                          alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
+
+                          try {
+                            await sendPaymentConfirmationEmail({
+                              name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
+                              email: payer.email_address,
+                              amount: totalPrice.toString(),
+                              items: selectedItems
+                            });
+                            alert('Payment successful! A confirmation email has been sent.');
+                          } catch (error) {
+                            console.error('Failed to send confirmation email:', error);
+                            alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
+                          } finally {
+                            setCart([]); // Always clear cart after successful payment capture
+                          }
                         }
+                      } catch (error) {
+                        console.error('Capture failed', error);
+                        alert('Payment could not be captured. Please try again.');
                       }
+                    }}
+                    onError={(err) => {
+                      console.error('PayPal Checkout error:', err);
+                      alert('An error occurred during checkout. Please try again.');
+                    }}
+                    onCancel={() => {
+                      alert('Payment process was cancelled.');
                     }}
                   />
                 </PayPalScriptProvider>

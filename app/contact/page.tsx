@@ -51,7 +51,7 @@ export default function ContactPage() {
             </div>
             <InfoCard
               tag="GROWTH"
-              title="Start the journey"
+              title="Start "
               subtitle="the journey"
               description="to your career success"
               className="grow"
