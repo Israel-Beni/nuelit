@@ -158,6 +158,21 @@ export default function PricingPage() {
 }
 
 const PLANS: PricingPlan[] = [
+
+  {
+    id: 'Test',
+    name: 'Test',
+    badge: 'Test',
+    basePrice: 0.1,
+    originalPrice: 0.2,
+    description: 'Test',
+    features: [
+      'We transform your profile to attract the right recruiters and opportunities',
+      'Get found in searches with smart keyword placement',
+      'Craft a headline and summary that actually represent who you are',
+      'Showcase your wins and experience in a way that stands out'
+    ]
+  },
   {
     id: 'resume',
     name: 'RESUME',
