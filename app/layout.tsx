@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "Empowering careers through professional writing and recruiter-backed coaching.",
     images: [
       {
-        url: "/logo-light--nuelit.svg",
+        url: "/logo-og-light--nuelit.png",
         width: 1200,
         height: 630,
         alt: "Nuelit - Career Breakthrough",
@@ -42,8 +42,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nuelit | Professional Career Services",
     description: "Empowering careers through professional writing and recruiter-backed coaching.",
-    images: ["/logo-light--nuelit.svg"],
+    images: ["/logo-og-light--nuelit.png"],
     creator: "@nuelit",
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
   robots: {
     index: true,
@@ -55,10 +60,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "YOUR_GSC_VERIFICATION_ID_HERE", // User to replace with actual ID
-  },
+  }
 };
 
 export default function RootLayout({
