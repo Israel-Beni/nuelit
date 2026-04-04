@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: "Resume Writing and Career Coaching Services",
     template: "%s | Nuelit"
   },
-  description: "Get hired faster with expert resume writing and career coaching.We help professionals stand out and land the jobs the deserve.",
+  description: "Get hired faster with expert resume writing and career coaching. We help professionals stand out and land the jobs the deserve.",
   keywords: ["career services", "resume writing", "career coaching", "ATS optimization", "recruiter", "job search"],
   authors: [{ name: "Nuelit Team" }],
   creator: "Nuelit",
