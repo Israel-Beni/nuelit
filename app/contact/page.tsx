@@ -7,8 +7,11 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Contact Us | Nuelit",
+  title: "Contact Us for Career Coaching & Support",
   description: "Get in touch with Nuelit for personalized career coaching and top-tier resume writing services.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

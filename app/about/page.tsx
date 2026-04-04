@@ -6,11 +6,10 @@ import { LogoBand } from "@/components/sections/logo-band";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "About Us | Nuelit",
+  title: "About Our Mission & Expert Team",
   description: "Learn how Nuelit bridges the gap between top talent and elite employers through recruiter-backed career services and strategic coaching.",
-  openGraph: {
-    title: "About Us | Nuelit",
-    description: "Learn how Nuelit bridges the gap between top talent and elite employers.",
+  alternates: {
+    canonical: "/about",
   },
 };
 

@@ -9,8 +9,11 @@ import { Process } from "@/components/sections/process";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Career Breakthrough & Professional Services",
+  title: "Elite Career Services & Resume Writing",
   description: "Accelerate your career with recruiter-backed coaching, ATS-perfect resumes, and strategic career services.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {
