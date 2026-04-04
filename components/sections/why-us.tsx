@@ -28,7 +28,7 @@ export function WhyUs() {
                     <feature.icon className="size-5 md:size-6" />
                   </div>
                   <div>
-                    <h3 className="text-heading-5 mb-1 md:mb-2 !text-white">{feature.title}</h3>
+                    <h4 className="text-heading-5 mb-1 md:mb-2 !text-white">{feature.title}</h4>
                     <p className="text-body-sm text-white/40">{feature.desc}</p>
                   </div>
                 </div>

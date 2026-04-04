@@ -51,8 +51,6 @@ export function FAQ() {
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-6 md:px-8 md:py-8 flex items-center justify-between text-left"
-                aria-expanded={openIndex === index}
-                aria-controls={`faq-content-${index}`}
               >
                 <span className={`text-body !text-white font-medium transition-slow pr-4`}>
                   {item.question}
@@ -63,7 +61,6 @@ export function FAQ() {
               </button>
 
               <div
-                id={`faq-content-${index}`}
                 className={`
                   transition-slow
                   ${openIndex === index ? 'max-h-screen opacity-100 py-4' : 'max-h-0 opacity-0'}

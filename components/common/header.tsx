@@ -52,8 +52,6 @@ export function Header() {
         <button
           className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle mobile menu"
-          aria-expanded={isMobileMenuOpen}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
