@@ -19,7 +19,8 @@ export function Hero() {
               loop
               playsInline
               preload="auto"
-              poster="https://image.mux.com/KFEU2lNxPw34yhikzo4U12wuC9U01mIpe6ST01BASCJ600/thumbnail.png?width=214&height=121&time=4"
+              poster="https://image.mux.com/KFEU2lNxPw34yhikzo4U12wuC9U01mIpe6ST01BASCJ600/thumbnail.png?width=1920&height=1080&time=4"
+              aria-hidden="true"
             />
             <div className="absolute top-0 left-0 size-full [background:linear-gradient(90deg,rgba(17,18,19,1)_0%,rgba(17,18,19,0)_50%,rgba(17,18,19,1)_100%),linear-gradient(0deg,rgba(17,18,19,1)_0%,rgba(17,18,19,0)_20%,rgba(17,18,19,0)_80%,rgba(17,18,19,1)_100%)] lg:[background:linear-gradient(90deg,rgba(17,18,19,1)_40%,rgba(17,18,19,0)_75%,rgba(17,18,19,0)_80%_80%,rgba(17,18,19,1)_100%),linear-gradient(0deg,rgba(17,18,19,1)_0%,rgba(17,18,19,0)_10%,rgba(17,18,19,0)_90%,rgba(17,18,19,1)_100%)]" />
             <div className="hidden lg:block absolute top-0 right-0 lg:w-3/4 h-full [background:radial-gradient(ellipse_at_center,rgba(17,18,19,0)_10%_20%,rgba(17,18,19,1)_100%)]" />
