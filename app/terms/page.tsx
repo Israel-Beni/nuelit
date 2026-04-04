@@ -4,8 +4,8 @@ import { Tag } from "@/components/ui/tag";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Read the Terms of Service for using Nuelit's career development services.",
+  title: "Our Terms of Service & Disclaimer",
+  description: "Read the full Terms of Service for using Nuelit's professional career development, resume writing, and coaching services.",
   alternates: {
     canonical: "/terms",
   },

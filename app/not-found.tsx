@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found',
-  description: "The page you're looking for doesn't exist.",
+  title: 'Page Not Found | Lost in Transit',
+  description: "The page you're looking for doesn't exist. Let's get you back to path to your professional career breakthrough.",
   robots: {
     index: false,
   },

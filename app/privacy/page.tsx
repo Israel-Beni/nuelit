@@ -3,8 +3,8 @@ import { Tag } from "@/components/ui/tag";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "Learn how Nuelit handles and protects your personal information.",
+  title: "Our Privacy Policy & Data Protection",
+  description: "Learn how Nuelit handles and protects your personal information in accordance with global data protection standards.",
   alternates: {
     canonical: "/privacy",
   },
