@@ -9,10 +9,10 @@ const siteUrl = "https://www.nuelit.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Nuelit | Professional Career Services",
+    default: "Resume Writing and Career Coaching Services",
     template: "%s | Nuelit"
   },
-  description: "Find your career breakthrough with Nuelit. We bridge the gap between top talent and elite employers using data-driven matching. Empower your career and change your life now.",
+  description: "Get hired faster with expert resume writing and career coaching.We help professionals stand out and land the jobs the deserve.",
   keywords: ["career services", "resume writing", "career coaching", "ATS optimization", "recruiter", "job search"],
   authors: [{ name: "Nuelit Team" }],
   creator: "Nuelit",
