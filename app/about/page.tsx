@@ -2,6 +2,7 @@ import { Summary } from "@/components/sections/summary";
 import { GoalSection } from "@/components/sections/goal-section";
 import { Values } from "@/components/sections/values";
 import { LogoBand } from "@/components/sections/logo-band";
+import { Founders } from "@/components/sections/founders";
 
 export const metadata = {
   title: "About Us | Nuelit",
@@ -14,6 +15,7 @@ export default function AboutPage() {
       <Summary />
       {/* <GoalSection /> */}
       <Values />
+      <Founders />
       <LogoBand />
     </>
   );
