@@ -4,6 +4,15 @@ import { ContactForm } from '@/components/contact/form-contact';
 import { InfoCard } from '@/components/contact/card-info';
 import { FAQ } from '@/components/sections/faq';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Contact Us for Career Coaching & Support",
+  description: "Get in touch with Nuelit for personalized career coaching and top-tier resume writing services.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -51,7 +60,7 @@ export default function ContactPage() {
             </div>
             <InfoCard
               tag="GROWTH"
-              title="Start the journey"
+              title="Start "
               subtitle="the journey"
               description="to your career success"
               className="grow"

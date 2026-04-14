@@ -73,57 +73,81 @@ export default function PricingPage() {
               </div>
 
               <div className="w-full grow h-full text-white">
-                <PayPalScriptProvider options={{
-                  clientId: "test",
-                  components: "buttons",
-                  intent: "capture",
-                }}>
-                  <PayPalButtons
-                    style={{
-                      layout: "vertical",
-                      color: "gold",
-                      shape: "pill",
-                      label: "checkout",
-                      height: 54
-                    }}
-                    createOrder={(data, actions) => {
-                      return actions.order.create({
-                        purchase_units: [{
-                          amount: {
-                            value: totalPrice.toString()
-                          }
-                        }]
-                      } as any);
-                    }}
-                    onApprove={async (data, actions) => {
-                      if (!actions.order) return;
-                      const order = await actions.order.capture();
-
-                      const payer = order.payer;
-                      if (payer && payer.email_address) {
-                        const selectedItems = cart.map(item => {
-                          const plan = PLANS.find(p => p.id === item.planId);
-                          const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
-                          return `${plan?.name}${level ? ` (${level})` : ''}`;
-                        });
-
+                {process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ? (
+                  <PayPalScriptProvider options={{
+                    clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+                    components: "buttons",
+                    intent: "capture",
+                  }}>
+                    <PayPalButtons
+                      style={{
+                        layout: "vertical",
+                        color: "gold",
+                        shape: "pill",
+                        label: "checkout",
+                        height: 54
+                      }}
+                      createOrder={(data, actions) => {
+                        return actions.order.create({
+                          purchase_units: [{
+                            amount: {
+                              value: totalPrice.toString()
+                            }
+                          }]
+                        } as any);
+                      }}
+                      onApprove={async (data, actions) => {
+                        if (!actions.order) return;
                         try {
-                          await sendPaymentConfirmationEmail({
-                            name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
-                            email: payer.email_address,
-                            amount: totalPrice.toString(),
-                            items: selectedItems
-                          });
-                          alert('Payment successful! A confirmation email has been sent.');
-                          setCart([]); // Clear cart after success
+                          const order = await actions.order.capture();
+
+                          const payer = order.payer;
+                          if (payer && payer.email_address) {
+                            const selectedItems = cart.map(item => {
+                              const plan = PLANS.find(p => p.id === item.planId);
+                              const level = plan?.levels && item.levelIndex !== undefined ? plan.levels[item.levelIndex].name : '';
+                              return `${plan?.name}${level ? ` (${level})` : ''}`;
+                            });
+
+                            try {
+                              await sendPaymentConfirmationEmail({
+                                name: `${payer.name?.given_name || ''} ${payer.name?.surname || ''}`.trim() || 'Valued Customer',
+                                email: payer.email_address,
+                                amount: totalPrice.toString(),
+                                items: selectedItems
+                              });
+                              alert('Payment successful! A confirmation email has been sent.');
+                            } catch (error) {
+                              console.error('Failed to send confirmation email:', error);
+                              alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
+                            } finally {
+                              setCart([]);
+                            }
+                          }
                         } catch (error) {
-                          console.error('Failed to send confirmation email:', error);
-                          alert('Payment successful, but we had trouble sending the confirmation email. Our team will reach out to you soon.');
+                          console.error('Capture failed', error);
+                          alert('Payment could not be captured. Please try again.');
                         }
-                      }
-                    }}
-                  />
-                </PayPalScriptProvider>
+                      }}
+                      onError={(err) => {
+                        console.error('PayPal Checkout error:', err);
+                        alert('An error occurred during checkout. Please try again.');
+                      }}
+                      onCancel={() => {
+                        alert('Payment process was cancelled.');
+                      }}
+                    />
+                  </PayPalScriptProvider>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full min-h-[150px] p-4 text-center border border-white/10 rounded-lg bg-black/20">
+                    <p className="text-sm font-medium text-white/90">
+                      Payments processing are temporarily paused.
+                    </p>
+                    <p className="text-xs text-white/60 mt-1">
+                      We are not accepting payments at this moment. Please try again later.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -134,6 +158,21 @@ export default function PricingPage() {
 }
 
 const PLANS: PricingPlan[] = [
+
+  {
+    id: 'Test',
+    name: 'Test',
+    badge: 'Test',
+    basePrice: 0.1,
+    originalPrice: 0.2,
+    description: 'Test',
+    features: [
+      'We transform your profile to attract the right recruiters and opportunities',
+      'Get found in searches with smart keyword placement',
+      'Craft a headline and summary that actually represent who you are',
+      'Showcase your wins and experience in a way that stands out'
+    ]
+  },
   {
     id: 'resume',
     name: 'RESUME',
@@ -230,22 +269,22 @@ const PLANS: PricingPlan[] = [
       'Assessment and detailed report'
     ]
   },
-  {
-    id: 'development',
-    name: 'DEVELOPMENT',
-    badge: 'WEB DEVELOPMENT',
-    basePrice: 499,
-    description: 'Professional web development tailored to your career goals.',
-    levels: [
-      { name: 'PORTFOLIO', price: 499, originalPrice: 649, description: 'Sleek personal portfolio to showcase your work and wins.' },
-      { name: 'BUSINESS', price: 999, originalPrice: 1299, description: 'Professional business site with advanced features.' },
-      { name: 'APP', price: 2499, originalPrice: 2999, description: 'Custom web application with complex functionality.' }
-    ],
-    features: [
-      'Fully responsive and mobile-friendly',
-      'Custom design reflective of your brand',
-      'Optimized for speed and SEO',
-      'Source code and deployment support'
-    ]
-  }
+  // {
+  //   id: 'development',
+  //   name: 'DEVELOPMENT',
+  //   badge: 'WEB DEVELOPMENT',
+  //   basePrice: 499,
+  //   description: 'Professional web development tailored to your career goals.',
+  //   levels: [
+  //     { name: 'PORTFOLIO', price: 499, originalPrice: 649, description: 'Sleek personal portfolio to showcase your work and wins.' },
+  //     { name: 'BUSINESS', price: 999, originalPrice: 1299, description: 'Professional business site with advanced features.' },
+  //     { name: 'APP', price: 2499, originalPrice: 2999, description: 'Custom web application with complex functionality.' }
+  //   ],
+  //   features: [
+  //     'Fully responsive and mobile-friendly',
+  //     'Custom design reflective of your brand',
+  //     'Optimized for speed and SEO',
+  //     'Source code and deployment support'
+  //   ]
+  // }
 ];
