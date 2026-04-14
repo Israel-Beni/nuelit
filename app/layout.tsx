@@ -83,7 +83,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID} />}
         <Analytics />
       </body>
     </html>
