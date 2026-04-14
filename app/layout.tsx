@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleTagManager } from "@next/third-parties/google"
 import { Header } from "@/components/common/header";
 import { Footer } from "@/components/common/footer";
 import { geistSans, geistMono, arialRounded, playfairDisplay } from "./fonts";
@@ -74,6 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <GoogleTagManager gtmId="GTM-K587638R" />
       <body
         className={`${geistSans.className} ${geistSans.variable} ${geistMono.variable} ${arialRounded.variable} ${playfairDisplay.variable} antialiased bg-background text-foreground flex flex-col min-h-screen selection:bg-primary/30`}
       >
