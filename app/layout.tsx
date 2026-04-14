@@ -75,7 +75,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <GoogleTagManager gtmId="GTM-K587638R" />
       <body
         className={`${geistSans.className} ${geistSans.variable} ${geistMono.variable} ${arialRounded.variable} ${playfairDisplay.variable} antialiased bg-background text-foreground flex flex-col min-h-screen selection:bg-primary/30`}
       >
@@ -84,6 +83,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
         <Analytics />
       </body>
     </html>
