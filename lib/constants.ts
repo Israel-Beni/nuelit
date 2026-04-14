@@ -27,32 +27,16 @@ export const CLIENTS = [
 
 export const FOUNDERS: { name: string; role: string; imageUid: string; linkedIn?: string; website?: string; instagram?: string; twitter?: string; email?: string }[] = [
   {
-    name: "Frank B.",
-    role: "CEO - Founder",
-    imageUid: "Frank_pl0jug",
-    linkedIn: "linkedin.com/in/frank-baissie"
-  },
-  {
-    name: "Frank B.",
+    name: "Frank Baissie",
     role: "CEO - Founder",
     imageUid: "IMG_1656_Background_Removed_qehqw9",
-    linkedIn: "linkedin.com/in/frank-baissie"
-  }, {
-    name: "Frank B.",
-    role: "CEO - Founder",
-    imageUid: "Frank_gzxqis",
-    linkedIn: "linkedin.com/in/frank-baissie"
+    linkedIn: "https://www.linkedin.com/in/frank-baissie/"
   },
   {
-    name: "Frank B.",
-    role: "CEO - Founder",
-    imageUid: "Copy_of_Untitled_Design_pojp98",
-    linkedIn: "linkedin.com/in/frank-baissie"
-  },
-  {
-    name: "Isra Ben D.",
+    name: "Ben T. Degbe",
     role: "CTO - Sr. Software & AI Engineer",
     imageUid: "Isra_uogwn8",
+    linkedIn: "https://www.linkedin.com/in/ben-t-degbe-902218175/",
     website: "https://on.contra.com/q7GjBp",
   },
 ];
