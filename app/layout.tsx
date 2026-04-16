@@ -84,7 +84,7 @@ export default function RootLayout({
         </main>
         <Footer />
         {process.env.NEXT_PUBLIC_GTM_ID && process.env.NODE_ENV === "production" && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
-        <Analytics />
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );
