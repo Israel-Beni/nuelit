@@ -29,13 +29,13 @@ export const FOUNDERS: { name: string; role: string; imageUid: string; linkedIn?
   {
     name: "Frank Baissie",
     role: "CEO - Founder",
-    imageUid: "IMG_1656_Background_Removed_qehqw9",
+    imageUid: "Frank_Canva_Avatar_ubwn03",
     linkedIn: "https://www.linkedin.com/in/frank-baissie/"
   },
   {
     name: "Ben T. Degbe",
     role: "CTO - Sr. Software & AI Engineer",
-    imageUid: "Isra_uogwn8",
+    imageUid: "Founder_mugshot_2_b0w1hi",
     linkedIn: "https://www.linkedin.com/in/ben-t-degbe-902218175/",
     website: "https://on.contra.com/q7GjBp",
   },

@@ -20,7 +20,7 @@ export default function AboutPage() {
       <Summary />
       {/* <GoalSection /> */}
       <Values />
-      {/* <Founders /> */}
+      <Founders />
       <LogoBand />
     </>
   );
