@@ -21,6 +21,8 @@ const FOOTER_LINKS = {
   ]
 };
 
+const year = new Date().getFullYear();
+
 export function Footer() {
   return (
     <footer className="relative py-16 md:py-25 overflow-hidden">
@@ -92,19 +94,21 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-8 pt-8 md:pt-12 border-t border-white/5">
-          <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/20 text-center md:text-left">
-            © NUELIT, 2026. ALL RIGHTS RESERVED.
+          <div className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/35 text-center md:text-left">
+            © NUELIT, {year}. ALL RIGHTS RESERVED.
+            <br />
+            Toulouse, France
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
             <div className="flex items-center gap-4 md:gap-6">
-              <Link href="https://x.com/nuelit_services?s=21" target="_blank" className="p-2 text-white/30 hover:text-white transition-colors">
+              <Link href="https://x.com/nuelit_services?s=21" target="_blank" className="p-2 text-white/35 hover:text-white transition-colors">
                 <svg className="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               </Link>
-              <Link href="https://www.instagram.com/nuelit_services?igsh=MTAycjF0eTVmOHhrdw%3D%3D&utm_source=qr" target="_blank" className="p-2 text-white/30 hover:text-white transition-colors">
+              <Link href="https://www.instagram.com/nuelit_services?igsh=MTAycjF0eTVmOHhrdw%3D%3D&utm_source=qr" target="_blank" className="p-2 text-white/35 hover:text-white transition-colors">
                 <Instagram className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
-              <Link href="https://www.linkedin.com/company/nuelit" target="_blank" className="p-2 text-white/30 hover:text-white transition-colors">
+              <Link href="https://www.linkedin.com/company/nuelit" target="_blank" className="p-2 text-white/35 hover:text-white transition-colors">
                 <Linkedin className="w-4 h-4 md:w-5 md:h-5 fill-current" />
               </Link>
             </div>
