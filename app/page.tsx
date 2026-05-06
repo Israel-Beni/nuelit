@@ -10,7 +10,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Resume Writing and Career Coaching Services",
-  description: "Get hired faster with expert resume writing and career coaching. We help professionals stand out and land the jobs the deserve.",
+  description: "Get hired faster with expert resume writing and career coaching. We help professionals stand out and land the jobs they deserve.",
   alternates: {
     canonical: "/",
   },
